@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mortgageCalculator{
+    width: 30%;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 15vw 15vw;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.432) 0px 10px 30px;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #333333;
+}
+
+form {
+    padding: 0 2rem;
+}
+
+.sectionHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/-1;
+    height: 3rem;
+    font-size: 1.2rem;
+}
+
+label{
+    justify-content: end;
+}
+
+input{
+    line-height: 1rem;
+    height: 1.5rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.btn {
+    margin: 1rem;
+    align-self: center;
+    justify-self: center;
+    outline: none;
+    height: 5vh;
+    width: 8vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+#calculate {
+    background-color: rgb(73, 230, 52);
+}
+
+#clear{
+    background-color: rgb(236, 147, 63);
+}
