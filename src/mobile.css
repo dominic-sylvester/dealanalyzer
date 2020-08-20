@@ -9,6 +9,10 @@
         background-color: #333333;
     }
 
+    .highlight{
+        color: rgb(236, 147, 63);
+    }
+
     #headerContainer{
         display: flex;
         justify-content: center;
@@ -39,7 +43,7 @@
         top: 0;
         left: 0;
         background: url('./background.webp') no-repeat center center/cover;
-        opacity: 0.4;
+        opacity: 0.2;
     }
 
     .app{
@@ -70,7 +74,9 @@
     }
 
     .sectionHeader{
-        margin: 10px 0;
+        background-color: rgb(236, 147, 63);
+        width: 100vw;
+        margin: 0;
         height: 12vh;
         line-height: 2.5rem;
         font-size: 1.5rem;
@@ -91,7 +97,7 @@
     }
 
     .btn{
-        margin: 10px 0;
+        margin: 0 0 2rem 0;
         width: 60vw;
         height: 8vh;
     }
@@ -108,13 +114,12 @@
         box-shadow: none;
     }
 
+    #utilities, #term{
+        margin-bottom: 2rem;
+    }
+
     .shortInput{
         width: 50vw;
     }
-
-    #calculate{
-        margin-top: 2rem;
-    }
-
 
 }
