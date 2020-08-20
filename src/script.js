@@ -58,7 +58,10 @@ class ProformaCalculator {
     }
     calculateNoi(monthlyPayment){
         return this.grossRents - this.operatingExpenses - monthlyPayment;
-    }  
+    }
+    calculatePropertyTax(){
+
+    } 
 }
 
 class Report {
@@ -70,8 +73,8 @@ class Report {
  generateReport(){
     document.getElementById('addressReport').textContent = this.mortgageCalculator.address;
     document.getElementById('purchasePriceReport').textContent = '$' + this.mortgageCalculator.purchasePrice;
-    document.getElementById('ltvReport').textContent = this.mortgageCalculator.ltv * 100 + '%';
-    document.getElementById('downPmtReport').textContent = '$' + this.mortgageCalculator.downPmt;
+    document.getElementById('ltvReport').textContent = (this.mortgageCalculator.ltv * 100).toFixed(2) + '%';
+    document.getElementById('downPmtReport').textContent = '$' + (this.mortgageCalculator.downPmt).toFixed(0);
     document.getElementById('closingCostReport').textContent = '$' + this.mortgageCalculator.closingCost;
     document.getElementById('principalReport').textContent = '$' + this.mortgageCalculator.principal;
     document.getElementById('interestRateReport').textContent = (this.mortgageCalculator.interestRate * 100).toFixed(2) + '%';
@@ -90,13 +93,22 @@ class Report {
  }
 }
 
-function calculatePayment(purchasePrice, ltv, interestRate, term ){
-    
-}
-
 document.getElementById('calculate').addEventListener('click', ()=> {
     let mortgageCalculator = new MortgageCalculator();
     let proformaCalculator = new ProformaCalculator(mortgageCalculator);
     proformaCalculator.noi = proformaCalculator.calculateNoi(mortgageCalculator.monthlyPayment);
     let report = new Report(mortgageCalculator, proformaCalculator);
+    document.querySelector('.report').style.right = '0';
 })
+
+document.getElementById('clear').addEventListener('click', ()=> {
+    clearAll();
+})
+
+function clearAll(){
+    let allFields = [...document.querySelectorAll('.reportField')];
+    allFields.forEach((element) => {
+        element.textContent = ''
+        element.value = '';
+    });
+}
