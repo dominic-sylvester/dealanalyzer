@@ -79,8 +79,9 @@ label{
 
 input{
     line-height: 2rem;
-    height: 1.5rem;
+    height: 4vh;
     outline: none;
+    border: none;
     font-size: 1rem;
 }
 
@@ -99,11 +100,29 @@ input{
 #calculate {
     background-color: rgb(73, 230, 52);
     justify-self: end;
+    transition: all 0.25s;
+}
+
+#calculate:hover{
+    background-color: rgb(76, 240, 54);
+}
+
+#calculate:active{
+    background-color: rgb(62, 199, 43);
 }
 
 #clear{
     background-color: rgb(236, 147, 63);
     justify-self: start;
+    transition: all 0.25s;
+}
+
+#clear:hover{
+    background-color: rgb(248, 154, 66)
+}
+
+#clear:active{
+    background-color: rgb(206, 128, 54)
 }
 
 .shortInput {
