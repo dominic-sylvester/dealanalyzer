@@ -44,13 +44,13 @@ class ProformaCalculator {
         this.mortgageCalculator = mortgageCalculator;
         this.grossRents = parseInt(document.getElementById('grossRents').value);
         this.managementFee = this.calculateManagementFee(this.grossRents);
-        this.propertyTax = this.calculatePropertyTax(this.mortgageCalculator.purchasePrice);
+        this.propertyTax = parseInt(this.calculatePropertyTax(this.mortgageCalculator.purchasePrice).toFixed(0));
         this.insurance = parseInt(document.getElementById('insurance').value);
         this.utilities = parseInt(document.getElementById('utilities').value);
-        this.vacancyReserve = this.calculateVacancyReserve(this.grossRents);
-        this.maintenanceReserve = this.calculateMaintenanceReserve(this.grossRents);
-        this.operatingExpenses = this.calculateOperatingExpenses(this.managementFee, this.propertyTax, this.insurance, this.utilities, this.vacancyReserve, this.maintenanceReserve);
-        this.noiLessCods = this.calculateNoiLessCods(this.grossRents, this.operatingExpenses);
+        this.vacancyReserve = parseInt(this.calculateVacancyReserve(this.grossRents));
+        this.maintenanceReserve = parseInt(this.calculateMaintenanceReserve(this.grossRents));
+        this.operatingExpenses = parseInt(this.calculateOperatingExpenses(this.managementFee, this.propertyTax, this.insurance, this.utilities, this.vacancyReserve, this.maintenanceReserve));
+        this.noiLessCods = parseInt(this.calculateNoiLessCods(this.grossRents, this.operatingExpenses));
         this.noi;
     }
     calculateManagementFee(grossRents){
@@ -63,7 +63,7 @@ class ProformaCalculator {
     }
     calculatePropertyTax(purchasePrice){
         if(document.getElementById('propertyTaxPercentage').checked === true){
-            return purchasePrice * ((document.getElementById('propertyTax').value / 100) / 12);
+            return purchasePrice * ((document.getElementById('propertyTax').value) / 100) / 12;
         } else if (document.getElementById('propertyTaxDollars').checked === true){
             return document.getElementById('propertyTax').value;
         }
@@ -76,7 +76,7 @@ class ProformaCalculator {
         return (grossRents * 0.1) / 12;
     }
     calculateOperatingExpenses(managementFee, propertyTax, insurance, utilities, vacancyReserve, maintenanceReserve){
-        return parseInt(managementFee + propertyTax + insurance + utilities + maintenanceReserve + vacancyReserve);
+        return managementFee + propertyTax + insurance + utilities + maintenanceReserve + vacancyReserve;
     }
     calculateNoiLessCods(grossRents, operatingExpenses) {
         return grossRents - operatingExpenses;

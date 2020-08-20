@@ -21,14 +21,14 @@
                 </div>
                 <label for="address">Address:</label><input type="text" class="reportField" id="address" name="address" placeholder="123 4th Avenue, Ames, IA">
                 <label for="purchasePrice">Price ($):</label><input type="number" class="reportField" id="purchasePrice" name="purchasePrice" placeholder="in dollars ($)">
-                <label for="ltv">Loan to Value (%):</label><input type="number" class="reportField" id="ltv" step="0.1" name="ltv" placeholder="in percentage (%)">
+                <label for="ltv">Loan to Value (%):</label><input type="number" class="reportField" id="ltv" step="any" name="ltv" placeholder="in percentage (%)">
                 <label for="closingCost">Closing Cost ($):</label>
                 <div>
-                    <input type="number" class="reportField shortInput" id="closingCost" name="closingCost" placeholder="Choose $ or %">
+                    <input type="number" class="reportField shortInput" id="closingCost" step="any" name="closingCost" placeholder="Choose $ or %">
                     <label for="closingCostPercentage">%</label><input type="radio" class="radio" id="closingCostPercentage" name="closingCostRadio" value="percentage">
                     <label for="closingCostDollars">$</label><input type="radio" class="radio" id="closingCostDollars" name="closingCostRadio" value="dollars" checked="true">
                 </div>
-                <label for="interestRate">Interest Rate (%):</label><input type="number" step="0.1" class="reportField" id="interestRate" name="interestRate" placeholder="in percentage (%)">
+                <label for="interestRate">Interest Rate (%):</label><input type="number" step="any" class="reportField" id="interestRate" name="interestRate" placeholder="in percentage (%)">
                 <label for="term">Term (Years):</label><input type="number" class="reportField" id="term" name="term" placeholder="In total years">
                 <div class="sectionHeader">
                     <h1>Property Pro Forma</h1>
@@ -36,13 +36,13 @@
                 <label for="grossRents">Gross Rents ($):</label><input type="number" class="reportField" id="grossRents" name="grossRents" placeholder="in dollars ($) per month">
                 <label for="managementFee">Management Fee:</label>
                 <div>
-                    <input type="number" class="reportField shortInput" id="managementFee" name="managementFee" placeholder="Choose $ or %">
+                    <input type="number" class="reportField shortInput" id="managementFee" step="any" name="managementFee" placeholder="Choose $ or %">
                     <label for="managementFeePercentage">%</label><input type="radio" class="radio" id="managementFeePercentage" name="managementFeeRadio" value="percentage">
                     <label for="managementFeeDollars">$</label><input type="radio" class="radio" id="managementFeeDollars" name="managementFeeRadio" value="dollars" checked="true">
                 </div>
                 <label for="propertyTax">Property Taxes:</label>
                 <div>
-                    <input type="number" class="reportField shortInput" id="propertyTax" name="propertyTax" placeholder="Choose $ or %">
+                    <input type="number" class="reportField shortInput" id="propertyTax" step="any" name="propertyTax" placeholder="Choose $ or %">
                     <label for="propertyTaxPercentage">%</label><input type="radio" class="radio" id="propertyTaxPercentage" name="propertyTaxRadio" value="percentage">
                     <label for="propertyTaxDollars">$</label><input type="radio" class="radio" id="propertyTaxDollars" name="propertyTaxRadio" value="dollars" checked="true">
                 </div>
