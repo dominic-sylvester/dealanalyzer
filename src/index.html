@@ -5,27 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
     <title>Document</title>
 </head>
 <body>
-    <section class="container">
-        <form id="mortgageCalculator">
-            <div class="sectionHeader">
-                <h1>Mortgage Calculator</h1>
+    <content class="app">
+        <section class="container">
+            <form class="calculator" id="mortgageCalc">
+                <div class="sectionHeader">
+                    <h1>Mortgage Calculator</h1>
+                </div>
+                <label for="address">Address:</label><input type="text" id="address" name="address" placeholder="123 4th Ave., Ames, IA">
+                <label for="purchasePrice">Price ($):</label><input type="number" id="purchasePrice" name="purchasePrice" placeholder="in dollars ($)">
+                <label for="ltv">Loan to Value (%):</label><input type="number" id="ltv" step="0.1" name="ltv" placeholder="in percentage (%)">
+                <label for="closingCost">Closing Cost ($):</label>
+                <div>
+                    <input type="number" id="closingCost" name="closingCost" placeholder="Choose $ or %" class="shortInput">
+                    <label for="closingCostPercentage">%</label><input type="radio" id="closingCostPercentage" name="closingCostPercentage" value="percentage">
+                    <label for="closingCostDollars">$</label><input type="radio" id="closingCostDollars" name="closingCostDollars" value="dollars">
+                </div>
+                <label for="interestRate">Interest Rate (%):</label><input type="number" step="0.1" id="interestRate" name="interestRate" placeholder="in percentage (%)">
+                <label for="term">Term (Years):</label><input type="number" id="term" name="term" placeholder="In total years">
+                <div class="sectionHeader">
+                    <h1>Property Pro Forma</h1>
+                </div>
+                <label for="grossRents">Gross Rents ($):</label><input type="number" id="grossRents" name="grossRents" placeholder="in dollars ($) per month">
+                <label for="managementFee">Management Fee:</label>
+                <div>
+                    <input type="number" id="managementFee" name="managementFee" placeholder="Choose $ or %" class="shortInput">
+                    <label for="managementFeePercentage">%</label><input type="radio" id="managementFeePercentage" name="managementFeePercentage" value="percentage">
+                    <label for="managementFeeDollars">$</label><input type="radio" id="managementFeeDollars" name="managementFeeDollars" value="dollars">
+                </div>
+                <label for="propertyTax">Property Taxes:</label>
+                <div>
+                    <input type="number" id="propertyTax" name="propertyTax" placeholder="Choose $ or %" class="shortInput">
+                    <label for="propertyTaxPercentage">%</label><input type="radio" id="managementFeePercentage" name="managementFeePercentage" value="percentage">
+                    <label for="propertyTaxDollars">$</label><input type="radio" id="managementFeeDollars" name="managementFeeDollars" value="dollars">
+                </div>
+                <label for="insurance">Insurance ($):</label><input type="number" id="insurance" name="insurance" placeholder="in dollars ($) per month">
+                <label for="utilities">Owner Utilities:</label><input type="number" id="utilities" name="utilities" placeholder="in dollars ($) per month">
+                <button class="btn" type="button" id="calculate">Calculate</button>
+                <button class="btn" type="button" id="clear">Clear</button>
+            </form>
+        </section>
+        <section class="report">
+            <div class="sectionHeader" id="propertyReportHeader">
+                <h1>Full Property Report</h1>
             </div>
-            <label for="address">Address:</label><input type="text" id="address" name="address">
-            <label for="purchasePrice">Price ($):</label><input type="number" id="purchasePrice" name="purchasePrice" placeholder="in dollars ($)">
-            <label for="ltv">Loan to Value (%):</label><input type="number" id="ltv" step="0.1" name="ltv" placeholder="in percentage (%)">
-            <label for="downPmt">Down Payment:</label><p id="downPmt">$</p>
-            <label for="closingCost">Closing Cost ($):</label><input type="number" id="closingCost" name="closingCost">
-            <label for="principal">Principal:</label><p id="principal">$</p>
-            <label for="interestRate">Interest Rate (%):</label><input type="number" step="0.1" id="interestRate" name="interestRate" placeholder="in percentage (%)">
-            <label for="term">Term (Years):</label><input type="number" id="term" name="term">
-            <label for="payment">Payment:</label><p id="payment">$</p>
-            <button class="btn" type="button" id="calculate">Calculate</button>
-            <button class="btn" type="button" id="clear">Clear</button>
-        </form>
-    </section>
+            <div class="sectionSubHeader">
+                <h1>Mortgage</h1>
+            </div>
+            <table class='reportTable'>
+                <tr>
+                    <td>Address: </td>
+                    <td class="reportField" id="addressReport"></td>
+                </tr>
+                <tr>
+                    <td>Purchase Price: </td>
+                    <td class="reportField" id="purchasePriceReport"></td>
+                </tr>
+                <tr>
+                    <td>Loan to Value: </td>
+                    <td class="reportField" id="ltvReport"></td>
+                </tr>
+                <tr>
+                    <td>Down Payment: </td>
+                    <td class="reportField" id="downPmtReport"></td>
+                </tr>
+                <tr>
+                    <td>Closing Costs: </td>
+                    <td class="reportField" id="closingCostReport"></td>
+                </tr>
+                <tr>
+                    <td>Principal: </td>
+                    <td class="reportField" id="principalReport"></td>
+                </tr>
+                <tr>
+                    <td>Interest Rate: </td>
+                    <td class="reportField" id="interestRateReport"></td>
+                </tr>
+                <tr>
+                    <td>Term: </td>
+                    <td class="reportField" id="termReport"></td>
+                </tr>
+                <tr>
+                    <td>Monthly Mortgage Payment: </td>
+                    <td class="reportField" id="monthlyPaymentReport"></td>
+                </tr>
+            </table>
+            <div class="sectionSubHeader">
+                <h1>Pro Forma</h1>
+            </div>
+            <table class='reportTable'>
+                <tr>
+                    <td>Gross Rents: </td>
+                    <td class="reportField" id="grossRentReport"></td>
+                </tr>
+                <tr>
+                    <td>Property Management Fee: </td>
+                    <td class="reportField" id="mgmtFeeReport"></td>
+                </tr>
+                <tr>
+                    <td>Property Taxes: </td>
+                    <td class="reportField" id="propertyTaxReport"></td>
+                </tr>
+                <tr>
+                    <td>Insurance: </td>
+                    <td class="reportField" id="insuranceReport"></td>
+                </tr>
+                <tr>
+                    <td>Owner Paid Utilities: </td>
+                    <td class="reportField" id="utilitiesReport"></td>
+                </tr>
+                <tr>
+                    <td>Vacancy Reserve (5%): </td>
+                    <td class="reportField" id="vacancyReport"></td>
+                </tr>
+                <tr>
+                    <td>Maintenance Reserve (10%): </td>
+                    <td class="reportField" id="maintenanceReport"></td>
+                </tr>
+                <tr>
+                    <td>Total Operating Expenses: </td>
+                    <td class="reportField" id="opExReport"></td>
+                </tr>
+                <tr>
+                    <td>Monthly Net Operating Income less Cost of Debt Service: </td>
+                    <td class="reportField" id="noiLessCodsReport"></td>
+                </tr>
+                <tr>
+                    <td>Monthly Net Operating Income: </td>
+                    <td class="reportField" id="noiReport"></td>
+                </tr>
+            </table>
+        </section>
+    </content>
 <script src='script.js'></script>
 </body>
 </html>

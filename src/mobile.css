@@ -1,0 +1,27 @@
+@media only screen and (max-width: 415px){
+    #container{
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .calculator{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 0.9rem;
+        border-radius: 0;
+    }
+
+    .btn{
+        width: 60vw;
+        height: 8vh;
+    }
+
+    #payment, #downPmt, #principal{
+        color: rgb(127, 201, 250);
+        font-size: 1rem;
+    }
+
+}
