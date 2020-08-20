@@ -5,7 +5,7 @@ class MortgageCalculator {
         this.ltv = document.getElementById('ltv').value / 100;
         this.downPmt = this.calculateDownPmt(this.purchasePrice, this.ltv);
         this.principal = this.calculatePrincipal(this.ltv, this.purchasePrice);
-        this.closingCost = document.getElementById('closingCost').value;
+        this.closingCost = this.calculateClosingCost(this.purchasePrice);
         this.interestRate = document.getElementById('interestRate').value / 100;
         this.term = document.getElementById('term').value;
         this.numberOfPayments = this.calculateNumberOfPayments(this.term);
@@ -14,6 +14,14 @@ class MortgageCalculator {
     //METHODS
     calculateDownPmt(purchasePrice, ltv){
         return purchasePrice * ltv;
+    }
+    calculateClosingCost(purchasePrice){
+        if(document.getElementById('closingCostPercentage').checked === true){
+            return purchasePrice * (document.getElementById('closingCost').value / 100);
+        } else if (document.getElementById('closingCostDollars').checked === true){
+            return document.getElementById('closingCost').value;
+        }
+        else alert('Please select dollars or percentage for closing cost');
     }
     calculateNumberOfPayments(term){
         return term * 12;
@@ -32,10 +40,11 @@ class MortgageCalculator {
 }
 
 class ProformaCalculator {
-    constructor(){
+    constructor(mortgageCalculator){
+        this.mortgageCalculator = mortgageCalculator;
         this.grossRents = parseInt(document.getElementById('grossRents').value);
-        this.managementFee = parseInt(document.getElementById('managementFee').value);
-        this.propertyTax = parseInt(document.getElementById('propertyTax').value);
+        this.managementFee = this.calculateManagementFee(this.grossRents);
+        this.propertyTax = this.calculatePropertyTax(this.mortgageCalculator.purchasePrice);
         this.insurance = parseInt(document.getElementById('insurance').value);
         this.utilities = parseInt(document.getElementById('utilities').value);
         this.vacancyReserve = this.calculateVacancyReserve(this.grossRents);
@@ -44,6 +53,22 @@ class ProformaCalculator {
         this.noiLessCods = this.calculateNoiLessCods(this.grossRents, this.operatingExpenses);
         this.noi;
     }
+    calculateManagementFee(grossRents){
+        if(document.getElementById('managementFeePercentage').checked === true){
+            return grossRents * ((document.getElementById('managementFee').value / 100));
+        } else if (document.getElementById('managementFeeDollars').checked === true){
+            return document.getElementById('managementFee').value;
+        }
+        else alert('Please select dollars or percentage for closing cost');
+    }
+    calculatePropertyTax(purchasePrice){
+        if(document.getElementById('propertyTaxPercentage').checked === true){
+            return purchasePrice * ((document.getElementById('propertyTax').value / 100) / 12);
+        } else if (document.getElementById('propertyTaxDollars').checked === true){
+            return document.getElementById('propertyTax').value;
+        }
+        else alert('Please select dollars or percentage for closing cost');
+    } 
     calculateVacancyReserve(grossRents){
         return (grossRents * 0.05) / 12;
     }
@@ -51,7 +76,7 @@ class ProformaCalculator {
         return (grossRents * 0.1) / 12;
     }
     calculateOperatingExpenses(managementFee, propertyTax, insurance, utilities, vacancyReserve, maintenanceReserve){
-        return managementFee + propertyTax + insurance + utilities + maintenanceReserve + vacancyReserve;
+        return parseInt(managementFee + propertyTax + insurance + utilities + maintenanceReserve + vacancyReserve);
     }
     calculateNoiLessCods(grossRents, operatingExpenses) {
         return grossRents - operatingExpenses;
@@ -59,9 +84,6 @@ class ProformaCalculator {
     calculateNoi(monthlyPayment){
         return this.grossRents - this.operatingExpenses - monthlyPayment;
     }
-    calculatePropertyTax(){
-
-    } 
 }
 
 class Report {

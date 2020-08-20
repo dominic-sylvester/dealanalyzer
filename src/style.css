@@ -137,13 +137,14 @@ h1{
     color: #fff;
 }
 .reportTable{
+    height: auto;
     width: 100%;
     border-spacing: 0;
     color: #f1f1f1;
 }
 
 .reportTable tr{
-    line-height: 2.3rem;
+    line-height: 4.4vh;
     background-color: #555555;
 }
 
