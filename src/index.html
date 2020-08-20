@@ -10,6 +10,10 @@
 </head>
 <body>
     <content class="app">
+        <header id="headerContainer">
+            <div id="heroImage"></div>
+            <h1>Real Estate Deal Analyzer Pro</h1>
+        </header>
         <section class="container">
             <form class="calculator" id="mortgageCalc">
                 <div class="sectionHeader">
@@ -21,8 +25,8 @@
                 <label for="closingCost">Closing Cost ($):</label>
                 <div>
                     <input type="number" class="reportField shortInput" id="closingCost" name="closingCost" placeholder="Choose $ or %">
-                    <label for="closingCostPercentage">%</label><input type="radio" id="closingCostPercentage" name="closingCostRadio" value="percentage">
-                    <label for="closingCostDollars">$</label><input type="radio" id="closingCostDollars" name="closingCostRadio" value="dollars" checked="true">
+                    <label for="closingCostPercentage">%</label><input type="radio" class="radio" id="closingCostPercentage" name="closingCostRadio" value="percentage">
+                    <label for="closingCostDollars">$</label><input type="radio" class="radio" id="closingCostDollars" name="closingCostRadio" value="dollars" checked="true">
                 </div>
                 <label for="interestRate">Interest Rate (%):</label><input type="number" step="0.1" class="reportField" id="interestRate" name="interestRate" placeholder="in percentage (%)">
                 <label for="term">Term (Years):</label><input type="number" class="reportField" id="term" name="term" placeholder="In total years">
@@ -33,14 +37,14 @@
                 <label for="managementFee">Management Fee:</label>
                 <div>
                     <input type="number" class="reportField shortInput" id="managementFee" name="managementFee" placeholder="Choose $ or %">
-                    <label for="managementFeePercentage">%</label><input type="radio" id="managementFeePercentage" name="managementFeeRadio" value="percentage">
-                    <label for="managementFeeDollars">$</label><input type="radio" id="managementFeeDollars" name="managementFeeRadio" value="dollars" checked="true">
+                    <label for="managementFeePercentage">%</label><input type="radio" class="radio" id="managementFeePercentage" name="managementFeeRadio" value="percentage">
+                    <label for="managementFeeDollars">$</label><input type="radio" class="radio" id="managementFeeDollars" name="managementFeeRadio" value="dollars" checked="true">
                 </div>
                 <label for="propertyTax">Property Taxes:</label>
                 <div>
                     <input type="number" class="reportField shortInput" id="propertyTax" name="propertyTax" placeholder="Choose $ or %">
-                    <label for="propertyTaxPercentage">%</label><input type="radio" id="propertyTaxPercentage" name="propertyTaxRadio" value="percentage">
-                    <label for="propertyTaxDollars">$</label><input type="radio" id="propertyTaxDollars" name="propertyTaxRadio" value="dollars" checked="true">
+                    <label for="propertyTaxPercentage">%</label><input type="radio" class="radio" id="propertyTaxPercentage" name="propertyTaxRadio" value="percentage">
+                    <label for="propertyTaxDollars">$</label><input type="radio" class="radio" id="propertyTaxDollars" name="propertyTaxRadio" value="dollars" checked="true">
                 </div>
                 <label for="insurance">Insurance ($):</label><input type="number" class="reportField" id="insurance" name="insurance" placeholder="in dollars ($) per month">
                 <label for="utilities">Owner Utilities:</label><input type="number" class="reportField" id="utilities" name="utilities" placeholder="in dollars ($) per month">

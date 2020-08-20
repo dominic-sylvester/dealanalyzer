@@ -17,15 +17,8 @@ body{
     grid-template-rows: 1fr 1fr;
 }
 
-#header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
-    width: 100%;
-    background-color: rgb(236, 147, 63);
-    color: #f1f1f1;
-    font-size: 2rem;
+#headerContainer{
+    display: none;
 }
 
 .container{
@@ -81,10 +74,11 @@ form {
 
 label{
     justify-content: end;
+    font-size: 1.2rem;
 }
 
 input{
-    line-height: 1rem;
+    line-height: 2rem;
     height: 1.5rem;
     outline: none;
     font-size: 1rem;
