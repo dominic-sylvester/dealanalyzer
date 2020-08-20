@@ -76,7 +76,8 @@ class ProformaCalculator {
         return (grossRents * 0.1) / 12;
     }
     calculateOperatingExpenses(managementFee, propertyTax, insurance, utilities, vacancyReserve, maintenanceReserve){
-        return managementFee + propertyTax + insurance + utilities + maintenanceReserve + vacancyReserve;
+        //change this to take a list of args and run parse int on forEach
+        return parseInt(managementFee) + parseInt(propertyTax) + parseInt(insurance) + parseInt(utilities) + parseInt(maintenanceReserve) + parseInt(vacancyReserve);
     }
     calculateNoiLessCods(grossRents, operatingExpenses) {
         return grossRents - operatingExpenses;
