@@ -44,7 +44,7 @@ class ProformaCalculator {
         this.mortgageCalculator = mortgageCalculator;
         this.grossRents = parseInt(document.getElementById('grossRents').value);
         this.managementFee = this.calculateManagementFee(this.grossRents);
-        this.propertyTax = parseInt(this.calculatePropertyTax(this.mortgageCalculator.purchasePrice).toFixed(0));
+        this.propertyTax = parseInt(this.calculatePropertyTax(this.mortgageCalculator.purchasePrice));
         this.insurance = parseInt(document.getElementById('insurance').value);
         this.utilities = parseInt(document.getElementById('utilities').value);
         this.vacancyReserve = parseInt(this.calculateVacancyReserve(this.grossRents));
