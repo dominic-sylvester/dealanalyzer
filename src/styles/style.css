@@ -9,7 +9,7 @@ body{
 }
 
 .app{
-    background: url('./background.webp') no-repeat center center/cover;
+    background: url('../img/background.webp') no-repeat center center/cover;
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -130,6 +130,8 @@ input{
 }
 
 .report{
+    display: flex;
+    flex-direction: column;
     width: 40vw;
     position: absolute;
     right: -40vw;
@@ -163,7 +165,7 @@ h1{
 }
 
 .reportTable tr{
-    line-height: 4.4vh;
+    line-height: 4vh;
     background-color: #555555;
 }
 
@@ -185,4 +187,12 @@ h1{
     align-items: center;
     justify-content: center;
     height: 100%;
+}
+
+#scorecardBtn{
+    justify-self: center;
+    align-self: center;
+    height: 4vh;
+    min-height: 4vh;
+    width: 12vw;
 }
