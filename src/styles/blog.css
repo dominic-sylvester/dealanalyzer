@@ -1,66 +1,59 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3{
-    font-family: 'Rubik', sans-serif;
+body{
+    background-color: #f1f1f1;
 }
 
-p{
-    font-family: 'Gelasio', serif;
+a{
+    text-decoration: none;
 }
 
-.postContainer{
+.posts{
+    width: 80vw;
+    height: 50vh;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    width: 60vw;
-    height: auto;
-    margin: auto;
+    justify-content: space-evenly;
+    align-content: center;
 }
 
 .blogPost{
-    overflow: hidden;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 30vh;
-    width: 30vw;
-    color: #fff;
-    background-color: #000;
-    position: relative;
-    opacity: 1;
-    box-shadow: #000, 100px 100px 40px;
+    justify-content: center;
+    width: 20vw;
+    height: 40vh;
+    border-radius: 1rem;
+    background-color: #333333;
+    color: #f1f1f1;
+    box-shadow: #00000065 0px 10px 30px;
 }
 
-.postAnimation{
-    top: -30vh;
-    left: -30vw;
-    background-color: rgb(236, 147, 63);
-    z-index: 1;
-    position: absolute;
-    width: 30vw;
-    height: 30vh;
-    transition: 0.5s;
-}
-
-h1, h2 {
+.blogTitle{
+    width: 80%;
     text-align: center;
-    z-index: 2;
 }
 
-.postPhoto{
-    content: '';
-    height: 30vh;
-    width: 30vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.4;
-    z-index: 0;
+.blogPost img{
+    height: 50%;
 }
 
-#LFFIY20sP1{
-    background: url('../src/img/p1.jpg') no-repeat center center/cover;
+.accent{
+    color: rgb(236, 147, 63);
+}
+
+#part1{
+    transition: all 0.5s;
+    background-color: #000000;
+    background: url('../img/p1Light.jpg') no-repeat center center/cover;
+}
+
+#part1:hover{
+    transform: scale(1.02);
 }

@@ -1,0 +1,46 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-row: 1;
+    grid-column: 1/-1;
+    background-color: #222222;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    height: 6vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navLogo{
+    display: flex;
+    align-items: center;
+}
+
+.navLogo img{
+    height: 2.5rem;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.nav a{
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.nav a:hover{
+    color: rgb(236, 147, 63);
+}
+
+.nav h1{
+    font-size: 2rem;
+    color: rgb(236, 147, 63);
+}
+
+.navOptions{
+    cursor: pointer;
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    color: #f1f1f1;
+}

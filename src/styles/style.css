@@ -14,7 +14,7 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 6% 47% 47%;
 }
 
 #headerContainer{
@@ -23,7 +23,7 @@ body{
 
 .container{
     grid-column: 1;
-    grid-row: 1/-1;
+    grid-row: 2/-1;
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -34,6 +34,7 @@ body{
 .calculator{
     width: 60%;
     height: 100%;
+    
     display: grid;
     grid-template-columns: 50% 50%;
     grid-auto-rows: 1fr;
@@ -134,10 +135,11 @@ input{
     flex-direction: column;
     width: 40vw;
     position: absolute;
+    top: 6%;
     right: -40vw;
     transition: all 1s;
     grid-column: 2;
-    grid-row: 1/-1;
+    grid-row: 2/-1;
     height: 100vh;
     background-color: #333333;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.452);
@@ -192,7 +194,52 @@ h1{
 #scorecardBtn{
     justify-self: center;
     align-self: center;
-    height: 4vh;
+    height: 6vh;
     min-height: 4vh;
     width: 12vw;
+    background-color: rgb(73, 230, 52);
+}
+
+.modal {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.719);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.scorecard{
+    margin: auto;
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.scorecard h1, h2, p{
+    margin: 1rem auto;
+}
+
+.a{
+ background-color: rgb(73, 230, 52);
+}
+.b{
+
+}
+.c{
+
+}
+.d{
+
+}
+.f{
+
 }

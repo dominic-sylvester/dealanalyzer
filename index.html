@@ -21,9 +21,21 @@
     <meta charset="utf-8" />
     <title>REDeals Pro</title>
     <link rel="icon" href="./src/home.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/styles/nav.css">
 </head>
 <body>
     <content class="app">
+        <nav class="nav">
+            <div class="navLogo">
+                <img src="./src/img/homeLarge.png" alt="logo">
+                <h1>ReDeals Pro | Real Estate Investment Analysis in Seconds!</h1>
+            </div>
+            <div class="navOptions">
+                <a href="./index.html">Calculator</a>
+                <!-- <a href="./about">About</a> -->
+                <a href="./blog.html" target="_blank">Blog</a>
+            </div>
+        </nav>
         <header id="headerContainer">
             <div id="heroImage"></div>
             <h1>Real Estate Deal Analyzer <span class="highlight">Pro</span></h1>
@@ -156,9 +168,18 @@
                     <td class="reportField" id="noiReport"></td>
                 </tr>
             </table>
-            <button type="button" class="btn" id="scorecardBtn">Generate Scorecard</button>
+            <!-- <button type="button" class="btn" id="scorecardBtn">Generate Scorecard</button> -->
         </section>
     </content>
+    <!-- <div class="modal">
+        <div class="scorecard a">
+            <h1>Property Report Card</h1>
+            <h1 class="grade">A</h1>
+            <h2 id="cashOnCash">41%</h2>
+            <h2 id="capRate">12%</h2>
+            <h2 id="monthlyCashflow">$480</h2>
+        </div>
+    </div> -->
 <script src='./src/js/script.js'></script>
 </body>
 </html>
