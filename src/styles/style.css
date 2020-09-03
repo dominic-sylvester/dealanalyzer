@@ -33,7 +33,7 @@ body{
 
 .calculator{
     width: 60%;
-    height: 95vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-auto-rows: 1fr;
@@ -73,6 +73,7 @@ form {
 }
 
 label{
+    padding: 10px 0;
     justify-content: end;
     font-size: 1.2rem;
 }
@@ -93,7 +94,7 @@ input{
     height: 8vh;
     width: 12vw;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #fff;
     border: none;
 }

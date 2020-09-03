@@ -12,6 +12,14 @@ a{
     text-decoration: none;
 }
 
+.highlight{
+    color: rgb(236, 147, 63);
+}
+
+.emphasize{
+    font-size: 1.75rem;
+}
+
 .posts{
     width: 80vw;
     padding: 5%;
@@ -50,7 +58,7 @@ header{
     top: 0;
     left: 0;
     background: url('../img/mfam.jpg') no-repeat center center/cover;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     opacity: 0.2;
 }
@@ -65,7 +73,23 @@ header h2{
     z-index: 1;
 }
 
+.seriesHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    background-color: #111111;
+    box-sizing: border-box;
+    text-align: center;
+}
 
+.seriesHeader p{
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    width: 50%;
+    margin: auto;
+}
 
 .blogPost{
     cursor: pointer;
@@ -87,10 +111,6 @@ header h2{
 
 .blogPost img{
     height: 50%;
-}
-
-.accent{
-    color: rgb(236, 147, 63);
 }
 
 #part1{
