@@ -1,0 +1,34 @@
+@media only screen and (max-width: 415px){
+    header{
+        height: 100vh;
+        width: 100vw;
+    }
+    header h1{
+        line-height: 4rem;
+        font-size: 3rem;
+        padding-bottom: 5vh;
+    }
+
+    header h2{
+        line-height: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .posts{
+        padding: 10vh 0 20vh 0;
+        width: 100%;
+    }
+
+    .blogPost{
+        width: 80%;
+        margin: auto;
+    }
+
+    #headerImg{
+        height: 100vh;
+    }
+
+    #headerImg::before{
+        height: 100vh;
+    }
+}
