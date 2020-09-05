@@ -233,7 +233,7 @@ h1{
     border: none;
     box-shadow: #0000003d 0px 10px 30px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 1rem auto;
     font-size: 1rem;
     transition: all 0.1s;
 }
@@ -276,7 +276,7 @@ h1{
     background-color: #2444fd;
 }
 .c{
-    background-color: #ffcd28;
+    background-color: #ffc400;
 }
 .d{
     background-color: rgb(248, 154, 66);
@@ -288,4 +288,5 @@ h1{
     width: 60%;
     margin: 0.5rem auto;
     font-size: 0.75rem;
+    text-align: center;
 }

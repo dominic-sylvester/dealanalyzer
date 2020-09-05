@@ -144,8 +144,6 @@ class Scorecard {
     }
     calculateCapRate(){
         //Cap rate is the percentage value of NOI less cost of debt service (mortgage) divided by the property value, in this case purchase price
-        console.log(this.proformaCalculator.noiLessCods);
-        console.log(this.mortgageCalculator.purchasePrice);
         return Math.round(((this.proformaCalculator.noiLessCods * 12) / this.mortgageCalculator.purchasePrice) * 100);
     }
     calculateGrade(){
@@ -159,11 +157,11 @@ class Scorecard {
         let grade;
         if (gradeScore >= 95){
             grade = "A+";
-            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52)";
+            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52);";
         }
         else if(gradeScore >= 90 && gradeScore < 95){
             grade = "A";
-            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52)";
+            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52);";
         }
         else if(gradeScore >= 75 && gradeScore < 90){
             grade = "B"; 
@@ -171,7 +169,7 @@ class Scorecard {
         }
         else if(gradeScore >= 60 && gradeScore < 75){
             grade = "C";
-            document.getElementById('scorecard').style.backgroundColor = "#ffcd28";
+            document.getElementById('scorecard').style.backgroundColor = "#ffc400";
         }
         else if(gradeScore >= 50 && gradeScore < 60){
             grade = "D";
@@ -180,10 +178,6 @@ class Scorecard {
         else if(gradeScore < 50){
             grade = "F"; 
             document.getElementById('scorecard').style.backgroundColor = "#f53030"
-        }
-        else{
-            document.getElementById('scorecard').style.backgroundColor = "#111111"
-            alert("Looks like you may have entered something wrong. Make sure you aren't using commas in your numbers.")
         }
         return grade;
     }

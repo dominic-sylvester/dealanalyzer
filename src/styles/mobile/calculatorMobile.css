@@ -133,4 +133,29 @@
         height: 8vh;
     }
 
+    #scorecard {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #reportCardBtn{
+        justify-self: center;
+        align-self: center;
+        font-size: 1rem;
+        margin-top: 5vh;
+        height: 10vh;
+        min-height: 4vh;
+        width: 50vw;
+        background-color: rgb(73, 230, 52);
+        box-shadow: #0000004b 0px 10px 30px; 
+        transition: all 0.1s;
+    }
+
+    #close{
+        height: 10vh;
+        width: 50vw;
+        margin-top: 5vh;
+    }
+
 }
