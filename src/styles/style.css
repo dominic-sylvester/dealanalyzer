@@ -120,11 +120,11 @@ input{
 }
 
 #clear:hover{
-    background-color: rgb(248, 154, 66)
+    background-color: rgb(248, 154, 66);
 }
 
 #clear:active{
-    background-color: rgb(206, 128, 54)
+    background-color: rgb(206, 128, 54);
 }
 
 .shortInput {
@@ -168,7 +168,7 @@ h1{
 }
 
 .reportTable tr{
-    line-height: 4vh;
+    line-height: 3.5vh;
     background-color: #555555;
 }
 
@@ -192,14 +192,27 @@ h1{
     height: 100%;
 }
 
-#scorecardBtn{
+#reportCardBtn{
     justify-self: center;
     align-self: center;
-    height: 6vh;
+    font-size: 1rem;
+    height: 5vh;
     min-height: 4vh;
-    width: 12vw;
+    width: 8vw;
     background-color: rgb(73, 230, 52);
+    box-shadow: #0000004b 0px 10px 30px; 
+    transition: all 0.1s;
 }
+
+#reportCardBtn:hover{
+    background-color: rgb(71, 214, 52);
+}
+
+#reportCardBtn:active{
+    background-color: rgb(71, 214, 52);;
+    box-shadow: #0000004b 0px 1px 10px; 
+}
+
 
 .modal {
     top: 0;
@@ -207,40 +220,72 @@ h1{
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.719);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.623);
+    display: none;
     flex-direction: column;
     justify-content: center;
 }
 
-.scorecard{
+#close{
+    width: 15%;
+    height: 8%;
+    outline: none;
+    border: none;
+    box-shadow: #0000003d 0px 10px 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-size: 1rem;
+    transition: all 0.1s;
+}
+
+#close:hover{
+    background-color: #ebebeb;
+}
+
+#close:active{
+    box-shadow: none;
+    background-color: #ebebeb;
+    box-shadow: #0000003d 0px 1px 10px;
+}
+
+#scorecard{
     margin: auto;
     height: 40rem;
     width: 40rem;
     border-radius: 50%;
-    background-color: #f1f1f1;
     display: flex;
+    background-color: initial;
     flex-direction: column;
     justify-content: center;
     align-content: center;
 }
 
-.scorecard h1, h2, p{
-    margin: 1rem auto;
+#scorecard h1, h2, p{
+    margin: 0.5rem auto;
+    color: #f1f1f1;
+}
+
+#grade {
+    font-size: 5rem;
 }
 
 .a{
- background-color: rgb(73, 230, 52);
+    background-color: rgb(73, 230, 52);
 }
 .b{
-
+    background-color: #2444fd;
 }
 .c{
-
+    background-color: #ffcd28;
 }
 .d{
-
+    background-color: rgb(248, 154, 66);
 }
 .f{
-
+    background-color: #f53030;
+}
+.subtext{
+    width: 60%;
+    margin: 0.5rem auto;
+    font-size: 0.75rem;
 }

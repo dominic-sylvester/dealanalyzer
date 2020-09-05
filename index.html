@@ -148,6 +148,10 @@
                     <td class="reportField" id="insuranceReport"></td>
                 </tr>
                 <tr>
+                    <td>Private Mortgage Insurance (PMI): </td>
+                    <td class="reportField" id="pmiReport"></td>
+                </tr>
+                <tr>
                     <td>Owner Paid Utilities: </td>
                     <td class="reportField" id="utilitiesReport"></td>
                 </tr>
@@ -172,18 +176,21 @@
                     <td class="reportField" id="noiReport"></td>
                 </tr>
             </table>
-            <!-- <button type="button" class="btn" id="scorecardBtn">Generate Scorecard</button> -->
+            <button type="button" class="btn" id="reportCardBtn">Report Card</button>
         </section>
     </content>
-    <!-- <div class="modal">
-        <div class="scorecard a">
+    <div class="modal">
+        <div id="scorecard">
             <h1>Property Report Card</h1>
-            <h1 class="grade">A</h1>
-            <h2 id="cashOnCash">41%</h2>
-            <h2 id="capRate">12%</h2>
-            <h2 id="monthlyCashflow">$480</h2>
+            <h1 id="grade">A</h1>
+            <h2 id="cashOnCash"></h2>
+            <h2 id="capRate"></h2>
+            <h2 id="monthlyCashflow"></h2>
+            <h2 id="yearlyCashflow"></h2>
+            <p class="subtext">*If you're getting a low score, make sure that you are entering the total market rents for all units of the property</p>
+            <button type="button" id="close">Close</button>
         </div>
-    </div> -->
+    </div>
 <script src='./src/js/script.js'></script>
 </body>
 </html>
