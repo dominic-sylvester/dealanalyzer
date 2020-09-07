@@ -157,11 +157,11 @@ class Scorecard {
         let grade;
         if (gradeScore >= 95){
             grade = "A+";
-            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52);";
+            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52)";
         }
         else if(gradeScore >= 90 && gradeScore < 95){
             grade = "A";
-            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52);";
+            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52)";
         }
         else if(gradeScore >= 75 && gradeScore < 90){
             grade = "B"; 
