@@ -155,11 +155,7 @@ class Scorecard {
         let monthlyCashflowScore = this.calculateMonthlyCashflowScore(monthlyCashflowWeight);
         let gradeScore = cashOnCashScore + capRateScore + monthlyCashflowScore;
         let grade;
-        if (gradeScore >= 95){
-            grade = "A+";
-            document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52)";
-        }
-        else if(gradeScore >= 90 && gradeScore < 95){
+        if(gradeScore >= 90){
             grade = "A";
             document.getElementById('scorecard').style.backgroundColor = "rgb(73, 230, 52)";
         }
