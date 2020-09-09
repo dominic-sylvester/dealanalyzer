@@ -94,7 +94,7 @@
 
     input{
         padding: 5px 0;
-        height: 3rem;
+        height: 2rem;
         width: 70vw;
     }
     
@@ -106,7 +106,7 @@
     .btn{
         margin: 0 0 2rem 0;
         width: 60vw;
-        height: 8vh;
+        height: 12vh;
     }
 
     #payment, #downPmt, #principal{
