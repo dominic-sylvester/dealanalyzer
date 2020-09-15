@@ -298,3 +298,12 @@ h1{
     font-size: 0.75rem;
     text-align: center;
 }
+
+@media only screen and (min-width: 2200px){
+    body {
+        background-color: #333333;
+    }
+    .app{
+        width: 70%;
+    }
+}
