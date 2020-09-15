@@ -97,12 +97,21 @@ input{
     font-size: 1.4rem;
     color: #fff;
     border: none;
+    transition: all 0.25s;
+    box-shadow: #00000063 0px 10px 30px;
+}
+
+.btn:hover{
+    box-shadow: #000000 0px 8px 20px;
+}
+
+.btn:active{
+    box-shadow: #000000 0px 4px 10px;
 }
 
 #calculate {
     background-color: rgb(73, 230, 52);
     justify-self: end;
-    transition: all 0.25s;
 }
 
 #calculate:hover{
@@ -116,7 +125,6 @@ input{
 #clear{
     background-color: rgb(236, 147, 63);
     justify-self: start;
-    transition: all 0.25s;
 }
 
 #clear:hover{

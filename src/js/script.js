@@ -79,10 +79,10 @@ class ProformaCalculator {
         }
     }
     calculateVacancyReserve(grossRents){
-        return (grossRents * 0.05) / 12;
+        return (grossRents * 0.05);
     }
     calculateMaintenanceReserve(grossRents){
-        return (grossRents * 0.1) / 12;
+        return (grossRents * 0.1);
     }
     calculateOperatingExpenses(managementFee, propertyTax, insurance, utilities, vacancyReserve, maintenanceReserve, pmi){
         //change this to take a list of args and run parse int on forEach
