@@ -118,8 +118,8 @@ class Report {
     document.getElementById('insuranceReport').textContent = '$' + this.proformaCalculator.insurance;
     document.getElementById('pmiReport').textContent = '$' + this.proformaCalculator.pmi;
     document.getElementById('utilitiesReport').textContent = '$' + this.proformaCalculator.utilities;
-    document.getElementById('vacancyReport').textContent = '$' + (this.proformaCalculator.vacancyReserve).toFixed(2);
-    document.getElementById('maintenanceReport').textContent = '$' + (this.proformaCalculator.maintenanceReserve).toFixed(2);
+    document.getElementById('vacancyReport').textContent = '$' + (this.proformaCalculator.vacancyReserve);
+    document.getElementById('maintenanceReport').textContent = '$' + (this.proformaCalculator.maintenanceReserve);
     document.getElementById('opExReport').textContent = '$' + this.proformaCalculator.operatingExpenses;
     document.getElementById('noiLessCodsReport').textContent = '$' + this.proformaCalculator.noiLessCods;
     document.getElementById('noiReport').textContent = '$' + this.proformaCalculator.noi;
@@ -132,6 +132,7 @@ class Scorecard {
         this.proformaCalculator = proformaCalculator;
         this.cashOnCash = this.calculateCashOnCash();
         this.capRate = this.calculateCapRate();
+        this.percentage = this.calculatePercentage();
         this.monthlyCashflow = this.proformaCalculator.noi;
         this.yearlyCashflow = this.monthlyCashflow * 12;
         this.buildReport();
@@ -146,14 +147,17 @@ class Scorecard {
         //Cap rate is the percentage value of NOI less cost of debt service (mortgage) divided by the property value, in this case purchase price
         return Math.round(((this.proformaCalculator.noiLessCods * 12) / this.mortgageCalculator.purchasePrice) * 100);
     }
+    calculatePercentage(){
+        return (this.proformaCalculator.grossRents / this.mortgageCalculator.purchasePrice) * 100;
+    }
     calculateGrade(){
-        let cashOnCashWeight = 0.3;
-        let capRateWeight = 0.3;
-        let monthlyCashflowWeight = 0.4;
-        let cashOnCashScore = this.calculateCashOnCashScore(cashOnCashWeight);
+        let percentageWeight = 0.5;
+        let capRateWeight = 0.5;
         let capRateScore = this.calculateCapRateScore(capRateWeight);
-        let monthlyCashflowScore = this.calculateMonthlyCashflowScore(monthlyCashflowWeight);
-        let gradeScore = cashOnCashScore + capRateScore + monthlyCashflowScore;
+        let percentageScore = this.calculatePercentageScore(percentageWeight);
+        // let cashOnCashScore = this.calculateCashOnCashScore(cashOnCashWeight);
+        // let monthlyCashflowScore = this.calculateMonthlyCashflowScore(monthlyCashflowWeight);
+        let gradeScore = capRateScore + percentageScore;
         let grade;
         if(gradeScore >= 90){
             grade = "A";
@@ -226,6 +230,34 @@ class Scorecard {
             capRateScore = 0;
         }
         return capRateScore * capRateWeight;
+    }
+    calculatePercentageScore(percentageWeight){
+        let percentageScore;
+        if(this.percentage >= 1.5){
+            percentageScore = 100;
+        }
+        else if(this.percentage < 1.5 && this.percentage > 1.2){
+            percentageScore = 90;
+        }
+        else if(this.percentage <= 1.2 && this.percentage >= 1.0){
+            percentageScore = 85;
+        }
+        else if(this.percentage < 1.0 && this.percentage >= 0.9){
+            percentageScore = 80;
+        }
+        else if(this.percentage < 0.9 && this.percentage >= 0.8){
+            percentageScore = 70;
+        }
+        else if(this.percentage < 0.8 && this.percentage >= 0.7){
+            percentageScore = 40;
+        }
+        else if(this.percentage < 0.7 && this.percentage >= 0.6){
+            percentageScore = 10;
+        }
+        else if(this.percentage < 0.6){
+            percentageScore = 0;
+        }
+        return percentageScore * percentageWeight; 
     }
     calculateMonthlyCashflowScore(monthlyCashflowWeight){
         let monthlyCashflowScore;
