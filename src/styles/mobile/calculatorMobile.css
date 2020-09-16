@@ -5,11 +5,6 @@
         margin: 0;
     }
 
-
-    body{
-        background-color: #333333;
-    }
-
     .highlight{
         color: rgb(236, 147, 63);
     }
@@ -76,16 +71,32 @@
         font-size: 0.9rem;
         border-radius: 0;
         padding: 0;
+        background-color: #222222;
         box-shadow: none;
     }
 
     .sectionHeader{
-        background-color: rgb(236, 147, 63);
+        background: linear-gradient(45deg, rgb(236, 147, 63), rgb(240, 120, 8));
         width: 100vw;
         margin: 0;
-        height: 12vh;
+        height: 8vh;
         line-height: 2.5rem;
         font-size: 1.5rem;
+    }
+    .sectionHeader h1{
+        font-size: 1.5rem;
+    }
+
+    .sectionSubHeader{
+        height: 7vh;
+    }
+
+    #propertyReportHeader{
+        background: #222222;
+    }
+
+    #propertyReportHeader h1{
+        font-size: 2rem;
     }
 
     label{
@@ -95,7 +106,8 @@
     input{
         padding: 5px 0;
         height: 2rem;
-        width: 70vw;
+        width: 60%;
+        text-align: center;
     }
     
     .radio {
@@ -105,8 +117,8 @@
 
     .btn{
         margin: 0 0 2rem 0;
-        width: 60vw;
-        height: 12vh;
+        width: 10rem;
+        height: 4.5rem;
     }
 
     #payment, #downPmt, #principal{
@@ -126,7 +138,8 @@
     }
 
     .shortInput{
-        width: 50vw;
+        margin-left: 10%;
+        width: 50%;
     }
 
     .reportTable tr{
@@ -157,5 +170,4 @@
         width: 50vw;
         margin-top: 5vh;
     }
-
 }

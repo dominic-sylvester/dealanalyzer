@@ -64,7 +64,7 @@ form {
     height: 2.5rem;
     color: #f1f1f1;
     font-size: 1.1rem;
-    background-color: rgb(236, 147, 63);
+    background: linear-gradient(45deg, rgb(236, 147, 63), rgb(240, 120, 8));
 }
 
 #propertyReportHeader{

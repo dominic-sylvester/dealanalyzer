@@ -208,7 +208,7 @@ class Scorecard {
     }
     calculateCapRateScore(capRateWeight){
         let capRateScore;
-        if(this.capRate > 10){
+        if(this.capRate >= 10){
             capRateScore = 100;
         }
         else if(this.capRate >= 8 && this.capRate < 10){
